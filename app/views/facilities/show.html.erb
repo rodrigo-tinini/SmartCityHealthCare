@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @facility.lat %>
+</p>
+
+<p>
+  <strong>Longi:</strong>
+  <%= @facility.longi %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @facility.address %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @facility.type %>
+</p>
+
+<p>
+  <strong>Classof:</strong>
+  <%= @facility.classOf %>
+</p>
+
+<%= link_to 'Edit', edit_facility_path(@facility) %> |
+<%= link_to 'Back', facilities_path %>
