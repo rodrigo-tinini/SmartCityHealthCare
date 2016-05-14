@@ -5,6 +5,10 @@ class FacilitiesController < ApplicationController
   # GET /facilities.json
   def index
     @facilities = Facility.all
+    @hash = Gmaps4rails.build_markers(@facilities) do |facility, marker|
+      marker.lat facility.lat
+      marker.lng facility.longi
+    end
   end
 
   # GET /facilities/1
@@ -60,7 +64,7 @@ class FacilitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_facility
