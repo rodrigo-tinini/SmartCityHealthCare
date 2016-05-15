@@ -1,0 +1,29 @@
+<div class="page-header">
+  <%= link_to health_facilities_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_health_facility_path(@health_facility), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show health_facility</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Lat:</dt>
+  <dd><%= @health_facility.lat %></dd>
+
+  <dt>Longi:</dt>
+  <dd><%= @health_facility.longi %></dd>
+
+  <dt>Address:</dt>
+  <dd><%= @health_facility.address %></dd>
+
+  <dt>Typeof:</dt>
+  <dd><%= @health_facility.typeOf %></dd>
+
+  <dt>Classof:</dt>
+  <dd><%= @health_facility.classOf %></dd>
+
+</dl>
