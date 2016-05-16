@@ -5,6 +5,11 @@ class HealthFacilitiesController < ApplicationController
   # GET /health_facilities.json
   def index
     @health_facilities = HealthFacility.all
+    @hash = Gmaps4rails.build_markers(@health_facilities) do |health_facility, marker|
+      marker.lat health_facility.lat
+      marker.lng health_facility.longi
+      marker.infowindow health_facility.typeOf
+    end
   end
 
   # GET /health_facilities/1
@@ -60,6 +65,8 @@ class HealthFacilitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  attr_accessor :hash
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -71,4 +78,5 @@ class HealthFacilitiesController < ApplicationController
     def health_facility_params
       params.require(:health_facility).permit(:lat, :longi, :address, :typeOf, :classOf)
     end
+    
 end

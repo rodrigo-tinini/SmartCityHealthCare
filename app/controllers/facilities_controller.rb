@@ -5,10 +5,6 @@ class FacilitiesController < ApplicationController
   # GET /facilities.json
   def index
     @facilities = Facility.all
-    @hash = Gmaps4rails.build_markers(@facilities) do |facility, marker|
-      marker.lat facility.lat
-      marker.lng facility.longi
-    end
   end
 
   # GET /facilities/1
